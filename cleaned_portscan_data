@@ -1,0 +1,15 @@
+import pandas as pd
+
+# 1. 讀取你原本那個太大的檔案
+file_name = 'cleaned_portscan_data.csv'
+df = pd.read_csv(file_name)
+
+# 2. 隨機抽樣 10,000 筆 (這筆數足以讓網頁跑出漂亮的圖表)
+# random_state 確保每次抽樣結果一致
+df_small = df.sample(n=10000, random_state=42)
+
+# 3. 覆蓋儲存回同一個檔名
+df_small.to_csv('cleaned_portscan_data.csv', index=False)
+
+print(f"✅ 瘦身完成！目前樣本數：{len(df_small)}")
+print("現在你可以把這個新的 'cleaned_portscan_data.csv' 拖進 GitHub 了！")
