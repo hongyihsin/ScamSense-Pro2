@@ -539,14 +539,14 @@ with tab4:
             # 圖表 1：雙模型防禦指標對比
             fig_contrast = go.Figure()
             fig_contrast.add_trace(go.Bar(
-                x=['資料預處理率', '抗 FGSM 擾動率', '主動聯防時效'],
-                y=[40, 15, 0],
+                x=['抗 FGSM 擾動率', '主動聯防時效'], # 👈 已移除資料預處理率
+                y=[15, 0],                           # 👈 對應移除 40
                 name='傳統靜態 IDS 系統',
                 marker_color='#ef553b'
             ))
             fig_contrast.add_trace(go.Bar(
-                x=['資料預處理率', '抗 FGSM 擾動率', '主動聯防時效'],
-                y=[100, 92, 95],
+                x=['抗 FGSM 擾動率', '主動聯防時效'], # 👈 已移除資料預處理率
+                y=[92, 95],                          # 👈 對應移除 100
                 name='ScamSense Pro 系統',
                 marker_color='#00cc96'
             ))
