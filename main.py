@@ -71,7 +71,7 @@ def run_attack_test(model, data, labels, eps, apply_clamp):
 st.set_page_config(page_title="ScamSense 自動化分析工作站", layout="wide")
 
 st.title("🛡️ ScamSense Pro: 入侵偵測系統自動化攻防分析平台")
-st.caption("資財三甲 期末專題成果展示 | 整合機器學習模型建立、預處理、對抗性攻防與蜜罐模擬")
+st.caption("整合機器學習模型建立、預處理、對抗性攻防與蜜罐模擬")
 
 # Session State 初始化
 if 'current_df' not in st.session_state:
@@ -174,7 +174,7 @@ with tab1:
         
         # 秀出目前的判定狀態
         if st.session_state['pipeline_mode'] == "AI_Model_Mode":
-            st.success("🎯 **【智慧判定結果：深度學習模式】** 欄位已自動對齊（已修剪空白字元），且後台已成功將巨型檔案『動態切片瘦身至前 500 筆』並完成 Min-Max 規格化，已掛載 PyTorch 動態攻防流水線！")
+            st.success("🎯 **【智慧判定結果：深度學習模式】** 欄位已自動對齊（已修剪空白字元），且後台已成功將巨型檔案隨機抽取500 筆並完成 Min-Max 規格化，已掛載 PyTorch 動態攻防流水線！")
         else:
             st.warning("⚡ **【智慧判定結果：統計規則引擎模式】** 檢測到非標準資安欄位。系統已自動啟動『啟動啟發式統計專家規則』，以確保系統相容性，防止崩潰。")
 
@@ -396,7 +396,7 @@ with tab3:
             # ====================================================
             # 📊 介面渲染：方案三（防火牆高壓聯防機制 SOAR）
             # ====================================================
-            st.subheader("🛡️ 方案三：Honeypot-to-Firewall 自動化防禦聯防 (SOAR)")
+            st.subheader("🛡️Honeypot-to-Firewall 自動化防禦聯防 (SOAR)")
             
             # 計算惡意流量佔比
             malicious_ratio = (malicious_count / total_honeypot_packets) * 100
@@ -425,7 +425,7 @@ with tab3:
             # ====================================================
             # 🧪 介面渲染：方案二（威脅情報隔離與模型疫苗重訓）
             # ====================================================
-            st.subheader("🔬 方案二：威脅情報自適應學習中心 (Adaptive Threat Intelligence)")
+            st.subheader("🔬威脅情報自適應學習中心 (Adaptive Threat Intelligence)")
             
             if len(captured_threats) > 0:
                 new_threats_df = pd.DataFrame(captured_threats)
